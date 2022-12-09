@@ -4,7 +4,7 @@ OBJECT_DIR  := ./obj
 BIN_DIR     := ./bin
 
 CC := g++
-CCFLAGS := -g -Wall -lglfw -lGL -lGLEW -lGLU
+CCFLAGS := -g -Wall
 
 SRCFILES     := $(wildcard $(SOURCE_DIR)/*.cpp)
 OBJECTS      := $(SRCFILES:$(SOURCE_DIR)/%.cpp=$(OBJECT_DIR)/%.o)
