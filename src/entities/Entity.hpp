@@ -6,6 +6,7 @@ public:
     int getHealth();
     int getStrength();
 //    Weapon getWeapon();
+//    Inventory getInventory();
 //    Armor getArmor();
     void attack(Entity);
 

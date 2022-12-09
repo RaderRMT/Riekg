@@ -18,6 +18,10 @@ int Entity::getStrength(){
 }
 
 /*
+Entty::getInventory(){
+    return this->m_inventory
+}
+
 Entity::getWeapon(){
     return this->m_weapon;
 }
