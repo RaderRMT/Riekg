@@ -17,5 +17,5 @@ private:
 //    Armor m_armor;
 
 protected:
-    Entity(int health, int strength/*, Inventory inventory, Weapon weapon, Armor armor*/);
+    Entity(int health, int strength/*, Weapon weapon, Armor armor*/);
 };
