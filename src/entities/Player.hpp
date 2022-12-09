@@ -2,6 +2,7 @@
 #include "Entity.hpp"
 
 class Player : public Entity {
+
 public:
     Player(int health, int strength):Entity(health,strength){}
     void flee();
@@ -9,9 +10,12 @@ public:
     void rest();
     void useItem();
 
+    static Player* getInstance();
+
 private:
+    static Player* player;
+
     int m_gold;
     int m_xp;
     int m_level;
-protected:
 };
