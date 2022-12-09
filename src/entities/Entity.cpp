@@ -4,9 +4,9 @@
 Entity::Entity(health,strength,inventory,weapon,armor) {
     this->m_health = health;
     this->m_strength = strength;
-    this->m_inventory = inventory;
-    this->m_weapon = weapon;
-    this->m_armor = armor;
+    // this->m_inventory = inventory;
+    // this->m_weapon = weapon;
+    // this->m_armor = armor;
 }
 
 Entity::getHealth(){
