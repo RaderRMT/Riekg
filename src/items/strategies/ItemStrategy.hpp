@@ -4,4 +4,4 @@ class ItemStrategy {
 
 public:
     virtual void use() = 0;
-}
+};
