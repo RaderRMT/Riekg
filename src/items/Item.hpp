@@ -2,7 +2,6 @@
 #include <iostream>
 #include "strategies/ItemStrategy.hpp"
 
-
 class Item {
 
 public:
