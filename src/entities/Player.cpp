@@ -9,8 +9,16 @@ Player* Player::getInstance() {
     return player;
 }
 
+void Player::setMaxHealth(int maxHealth) {
+    this->m_maxHealth = maxHealth;
+}
+
+int Player::getMaxHealth() {
+    return this->m_maxHealth;
+}
+
 void Player::flee(){
-    
+
 }
 
 void Player::observe(){

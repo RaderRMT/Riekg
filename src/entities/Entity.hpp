@@ -4,6 +4,7 @@ class Entity {
 
 public:
     int getHealth();
+    void setHealth(int health);
     int getStrength();
 //    Weapon getWeapon();
 //    Inventory getInventory();
