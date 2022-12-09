@@ -5,8 +5,12 @@
 
 class Item {
 public:
+    void setStrategy(ItemStrategy* strategy);
+    std::string getName();
+    std::string getDescription();
+    Item(std::string name, std::string description, ItemStrategy* strategy);
 private:
     std::string m_name;
-    std::string description;
-    ItemStrategy m_strategy;
+    std::string m_description;
+    ItemStrategy* m_strategy;
 };
