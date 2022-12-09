@@ -17,6 +17,10 @@ int Entity::getStrength(){
     return this->m_strength;
 }
 
+void Entity::setHealth(int health) {
+    this->m_health = health;
+}
+
 /*
 Entty::getInventory(){
     return this->m_inventory
