@@ -17,6 +17,14 @@ int Player::getMaxHealth() {
     return this->m_maxHealth;
 }
 
+void Player::setGold(int gold) {
+    this->m_gold = gold;
+}
+
+int Player::getGold() {
+    return this->m_gold;
+}
+
 void Player::flee(){
 
 }
