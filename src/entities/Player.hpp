@@ -4,8 +4,8 @@
 class Player : public Entity {
 
 public:
-    Player(int maxHealth, int strength):Entity(maxHealth,strength) {
-        this.m_maxHealth = maxHealth;
+    Player(int maxHealth, int strength) : Entity(maxHealth,strength) {
+        this->m_maxHealth = maxHealth;
     }
     void flee();
     void observe();
