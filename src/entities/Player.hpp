@@ -15,6 +15,9 @@ public:
     int getMaxHealth();
     void setMaxHealth(int maxHealth);
 
+    int getGold();
+    void setGold(int gold);
+
     static Player* getInstance();
 
 private:
