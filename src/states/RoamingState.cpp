@@ -5,7 +5,8 @@ RoamingState::RoamingState(Room* currentroom){
 }
 
 void RoamingState::run(){
-    Direction* direction;
-    scanf("%d",direction);
-    this->m_currentRoom = this->m_currentRoom->getExit(*direction);
+    int direction;
+    scanf("%d",&direction);
+    static_cast<Direction>(direction);
+    this->m_currentRoom = this->m_currentRoom->getExit(direction);
 }
