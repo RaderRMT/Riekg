@@ -2,12 +2,17 @@
 #include <vector>
 #include "ItemStruct.hpp"
 
-class Inventory{
-
-public:
-
+class Inventory {
 
 private:
-    int m_size;
-    std::vector<ItemStruct> m_element;
+    std::vector<ItemStruct> m_elements;
+
+public:
+    Inventory();
+
+    ItemStruct getItem(int index);
+    void insert(Item* item, int count);
+    void addAll(Inventory* source);
+    int getSize();
+    void show();
 };
