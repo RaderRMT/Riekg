@@ -6,9 +6,10 @@
 class FightState{
 public:
     void run();
-    FightState();
+    FightState(Entity* entite);
 
 private:
     bool m_inFight;
     Player* m_player;
+    Entity* m_entity;
 };
