@@ -1,14 +1,12 @@
 #include "Room.hpp"
 
 #include "Direction.hpp"
-#include "Position.hpp"
 #include <algorithm>
 #include <map>
 #include <utility>
 #include <vector>
 
-Room::Room(Position position, bool hasBed, std::vector<Enemy> enemies, std::vector<Item> items, std::map<Direction, Position> exits) {
-    this->m_position = position;
+Room::Room(bool hasBed, std::vector<Enemy> enemies, std::vector<Item> items, std::map<Direction, Room*> exits) {
     this->m_hasBed = hasBed;
     this->m_exits = exits;
     this->m_enemies = enemies;
@@ -39,18 +37,14 @@ std::vector<Item> Room::getItems() {
     return this->m_items;
 }
 
-Position Room::getExit(Direction direction) {
+Room* Room::getExit(Direction direction) {
     return this->m_exits.at(direction);
 }
 
-std::map<Direction, Position> Room::getExits() {
+std::map<Direction, Room*> Room::getExits() {
     return this->m_exits;
 }
 
-Position Room::getPosition() {
-    return this->m_position;
-}
-
-void Room::addExit(Direction direction, Position position) {
-    this->m_exits.insert(std::pair<Direction, Position>(direction, position));
+void Room::setExit(Direction direction, Room* room) {
+    this->m_exits.insert(std::pair<Direction, Room*>(direction, nullptr));
 }

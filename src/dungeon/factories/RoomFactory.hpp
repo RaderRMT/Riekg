@@ -11,5 +11,5 @@ private:
     static const int MAX_ITEMS = 2;
 
 public:
-    static Room* createRoom(Position position, std::pair<Direction, Position> previousRoom);
+    static Room* createRoom(std::pair<Direction, Room*> previousRoom);
 };

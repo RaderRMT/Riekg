@@ -17,6 +17,6 @@ private:
 
 public:
     Floor();
-    void parcoursLargeur(std::queue<Room*> rooms);
+    void generateFloorRooms(std::queue<Room*> rooms);
     void generateFloor();
 };
