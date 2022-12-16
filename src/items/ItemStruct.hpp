@@ -2,6 +2,6 @@
 
 typedef struct ItemStruct
 {
-    Item item;
+    Item* item;
     int quantity;
 } ItemStruct;
