@@ -1,6 +1,5 @@
 #include "Floor.hpp"
 #include "Direction.hpp"
-#include "Position.hpp"
 #include "Room.hpp"
 #include "factories/RoomFactory.hpp"
 #include <algorithm>
@@ -14,18 +13,15 @@ Floor::Floor() {
 }
 
 void Floor::generateFloor() {
-    Room* initialRoom = RoomFactory::createRoom(
-            EMPTY_POSITION,
-            std::pair<Direction, Position>(Direction::NONE, EMPTY_POSITION)
-    );
+    Room* initialRoom = RoomFactory::createRoom(std::pair<Direction, Room*>(Direction::NONE, nullptr));
 
     std::queue<Room*> queue;
     queue.push(initialRoom);
 
-    parcoursLargeur(queue);
+    generateFloorRooms(queue);
 }
 
-void Floor::parcoursLargeur(std::queue<Room*> rooms) {
+void Floor::generateFloorRooms(std::queue<Room*> rooms) {
     if (rooms.empty()) {
         return;
     }
@@ -34,11 +30,12 @@ void Floor::parcoursLargeur(std::queue<Room*> rooms) {
 
     generateExits(room);
 
-    for (std::pair<Direction, Position> position : room->getExits()) {
+    for (std::pair<Direction, Room*> position : room->getExits()) {
         Room* newRoom = RoomFactory::createRoom(
-                position.second,
-                std::pair<Direction, Position>(inverse(position.first), room->getPosition())
+                std::pair<Direction, Room*>(inverse(position.first), room)
         );
+
+        room->setExit(position.first, newRoom);
 
         rooms.push(newRoom);
     }
@@ -68,8 +65,7 @@ void Floor::generateExits(Room* room) {
             continue;
         }
 
-        Position exitPosition = DIRECTION_POSITIONS.at(direction);
-        room->addExit(exitDirection, exitPosition);
+        room->setExit(exitDirection, nullptr);
 
         this->roomsToGenerate--;
     }
