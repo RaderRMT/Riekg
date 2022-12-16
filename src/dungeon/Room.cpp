@@ -6,7 +6,7 @@
 #include <utility>
 #include <vector>
 
-Room::Room(bool hasBed, std::vector<Enemy> enemies, std::vector<Item> items, std::map<Direction, Room*> exits) {
+Room::Room(bool hasBed, std::vector<Enemy*> enemies, std::vector<Item*> items, std::map<Direction, Room*> exits) {
     this->m_hasBed = hasBed;
     this->m_exits = exits;
     this->m_enemies = enemies;
@@ -21,7 +21,7 @@ bool Room::hasEnemies() {
     return this->m_enemies.empty();
 }
 
-std::vector<Enemy> Room::getEnemies() {
+std::vector<Enemy*> Room::getEnemies() {
     return this->m_enemies;
 }
 
@@ -33,7 +33,7 @@ bool Room::hasExit(Direction direction) {
     return std::count(this->m_exits.begin(), this->m_exits.end(), direction);
 }
 
-std::vector<Item> Room::getItems() {
+std::vector<Item*> Room::getItems() {
     return this->m_items;
 }
 
