@@ -5,9 +5,8 @@
 class RoamingState:State{
 public:
     void run() override;
-    RoamingState(Room* currentroom);
+    RoamingState();
 private:
     Room* m_currentRoom;
-    
 };
 
