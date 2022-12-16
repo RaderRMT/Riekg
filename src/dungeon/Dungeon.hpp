@@ -8,11 +8,11 @@
 class Dungeon {
 
 private:
-    std::map<Position, Room> m_rooms;
+    std::map<Position, Room*> m_rooms;
 
 public:
     Dungeon();
 
-    Room getRoom(Position position);
-    void addRoom(Room room);
+    Room* getRoom(Position position);
+    void addRoom(Room* room);
 };
