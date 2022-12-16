@@ -4,13 +4,9 @@
 class Player : public Entity {
 
 public:
-    Player(int maxHealth, int strength) : Entity(maxHealth,strength) {
-        this->m_maxHealth = maxHealth;
-    }
     void flee();
     void observe();
     void rest();
-    void useItem();
 
     int getMaxHealth();
     void setMaxHealth(int maxHealth);
@@ -21,6 +17,8 @@ public:
     static Player* getInstance();
 
 private:
+    Player(int maxHealth, int strength);
+
     static Player* player;
 
     int m_gold;
