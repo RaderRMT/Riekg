@@ -6,8 +6,11 @@ BIN_DIR     := ./bin
 CC := g++
 CCFLAGS := -g -Wall
 
-SRCFILES     := $(wildcard $(SOURCE_DIR)/*.cpp)
+SRCFILES     := $(shell find -wholename '$(SOURCE_DIR)*.cpp')
 OBJECTS      := $(SRCFILES:$(SOURCE_DIR)/%.cpp=$(OBJECT_DIR)/%.o)
+
+test:
+	echo $(SRCFILES)
 
 all: init $(BIN_DIR)/$(TARGET_NAME)
 
@@ -15,6 +18,7 @@ $(BIN_DIR)/$(TARGET_NAME): $(OBJECTS)
 	$(CC) -o $@ $(OBJECTS) $(CCFLAGS)
 
 $(OBJECT_DIR)/%.o: $(SOURCE_DIR)/%.cpp
+	mkdir -p $(shell dirname $@)
 	$(CC) $(CCFLAGS) -o $@ -c $<
 
 clean:
