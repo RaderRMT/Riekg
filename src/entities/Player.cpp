@@ -46,7 +46,4 @@ void Player::observe() {
 void Player::rest() {
 
 }
-void Player::move(Direction direction){
-    
 
-}
