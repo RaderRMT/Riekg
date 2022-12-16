@@ -1,16 +1,16 @@
 #pragma once
 
 #include "../Entity.hpp"
+#include <string>
 
 class Enemy : public Entity {
 
 private:
+    std::string m_name;
     int m_experience;
 
 public:
-    Enemy(int experience, int health, int strength) : Entity(health, strength) {
-        this->m_experience = experience;
-    }
-
+    Enemy(std::string name, int experience, int health, int strength);
     int getExperience();
+    std::string getName();
 };
