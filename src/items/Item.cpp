@@ -6,8 +6,16 @@ Item::Item(std::string name, std::string description, ItemStrategy* strategy) {
     this->m_strategy = strategy;
 }
 
-void setStrategy(ItemStrategy* strategy) {
+void Item::setStrategy(ItemStrategy* strategy) {
+    this->m_strategy = strategy;
+}
 
+void Item::use() {
+    if (this->m_strategy == nullptr) {
+        return;
+    }
+
+    this->m_strategy->use();
 }
 
 std::string Item::getName() {

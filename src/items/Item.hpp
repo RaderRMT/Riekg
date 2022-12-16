@@ -9,6 +9,7 @@ public:
     std::string getName();
     std::string getDescription();
     Item(std::string name, std::string description, ItemStrategy* strategy);
+    void use();
 
 private:
     std::string m_name;
