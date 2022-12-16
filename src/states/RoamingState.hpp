@@ -1,10 +1,10 @@
 #pragma once
 #include "State.hpp"
-#include "Room.hpp"
+#include "../dungeon/Room.hpp"
 
 class RoamingState:State{
 public:
-    void run() override;
+    bool run(std::stack<State*>* states) override;
     RoamingState(Room* currentroom);
 private:
     Room* m_currentRoom;

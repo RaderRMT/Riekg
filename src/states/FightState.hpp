@@ -1,15 +1,14 @@
 #pragma once
 #include "State.hpp"
-#include "Room.hpp"
-#include "Player.hpp"
+#include "../dungeon/Room.hpp"
+#include "../entities/Player.hpp"
 
-class FightState{
+class FightState : public State {
 public:
-    void run();
-    FightState(Entity* entite);
+    bool run(std::stack<State*>* states) override;
+    FightState(Enemy* enemy);
 
 private:
-    bool m_inFight;
     Player* m_player;
-    Entity* m_entity;
+    Enemy* m_enemy;
 };

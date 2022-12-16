@@ -14,5 +14,6 @@ public:
     void insert(Item* item, int count);
     void addAll(Inventory* source);
     int getSize();
+    std::vector<ItemStruct> getItems();
     void show();
 };

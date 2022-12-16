@@ -1,6 +1,7 @@
 #pragma once
 
+#include <stack>
 class State {
 public:
-    virtual void run() = 0;
+    virtual bool run(std::stack<State*>* states) = 0;
 };

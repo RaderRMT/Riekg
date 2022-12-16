@@ -31,6 +31,10 @@ int Inventory::getSize() {
     return this->m_elements.size();
 }
 
+std::vector<ItemStruct> Inventory::getItems() {
+    return this->m_elements;
+}
+
 void Inventory::show() {
     // todo
 }
