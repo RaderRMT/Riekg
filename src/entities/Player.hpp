@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.hpp"
+#include "Position.hpp"
 
 class Player : public Entity {
 
@@ -7,6 +8,7 @@ public:
     void flee();
     void observe();
     void rest();
+    void move(Direction direction);
 
     int getMaxHealth();
     void setMaxHealth(int maxHealth);

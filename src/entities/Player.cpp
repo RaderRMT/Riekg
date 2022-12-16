@@ -36,6 +36,7 @@ int Player::getGold() {
 
 void Player::flee() {
 
+
 }
 
 void Player::observe() {
@@ -43,5 +44,9 @@ void Player::observe() {
 }
 
 void Player::rest() {
+
+}
+void Player::move(Direction direction){
+    
 
 }
