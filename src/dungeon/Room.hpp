@@ -22,9 +22,17 @@ public:
     bool hasEnemies();
     bool hasItems();
     bool hasBed();
+    bool hasExit(Direction direction);
+
+    void addExit(Direction direction, Position exit);
 
     std::vector<Enemy> getEnemies();
     std::vector<Item> getItems();
     Position getExit(Direction direction);
+    std::map<Direction, Position> getExits();
     Position getPosition();
 };
+
+inline bool operator==(const std::pair<const Direction, s_position> pair, const Direction direction) {
+    return pair.first == direction;
+}
