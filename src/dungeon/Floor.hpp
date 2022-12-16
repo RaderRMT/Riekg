@@ -14,9 +14,9 @@ private:
     int roomsToGenerate;
 
     void generateExits(Room* room);
+    void generateFloorRooms(std::queue<Room*> rooms);
 
 public:
     Floor();
-    void generateFloorRooms(std::queue<Room*> rooms);
-    void generateFloor();
+    Room* generateFloor();
 };

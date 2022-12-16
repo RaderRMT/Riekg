@@ -12,13 +12,15 @@ Floor::Floor() {
     this->roomsToGenerate = MIN_ROOM_COUNT + (rand() % (MAX_ROOM_COUNT - MIN_ROOM_COUNT));
 }
 
-void Floor::generateFloor() {
+Room* Floor::generateFloor() {
     Room* initialRoom = RoomFactory::createRoom(std::pair<Direction, Room*>(Direction::NONE, nullptr));
 
     std::queue<Room*> queue;
     queue.push(initialRoom);
 
     generateFloorRooms(queue);
+
+    return initialRoom;
 }
 
 void Floor::generateFloorRooms(std::queue<Room*> rooms) {
